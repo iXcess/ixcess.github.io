@@ -1,0 +1,11 @@
+_site
+_posts
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+kommuweb.code-workspace
+vendor
+css/bootstrap.*
+js/bootstrap.*
+js/jquery*
+font-awesome-4.1.0
