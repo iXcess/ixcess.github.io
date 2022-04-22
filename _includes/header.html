@@ -8,10 +8,10 @@
 						<h1>{{ page.title }}</h1>
 						<h3>{{ page.subTitle }}</h3>
                         <hr>
-                        <div class="justify-content-center">
+                        <div id="donthideme">
 							{% for social in site.social %}
                             <a href="{{ social.url }}">
-                                <button class="btn btn-light ms-3">
+                                <button class="btn btn-light">
                                     <img src="/img/icons/{{ social.title }}.svg" width="16" style="height:2em; margin-right: 2px;">
                                     <span class="network-name">{{ social.title }}</span>
                                 </button>
@@ -24,3 +24,18 @@
 		</div>
 	</div>
 </section>
+
+<style>
+@media (max-width: 480px) {
+    #donthideme {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #donthideme button {
+        width: 80%;
+        margin: 3px;
+    }
+}
+
+</style>
