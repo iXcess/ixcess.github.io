@@ -2,12 +2,12 @@
 layout: page
 title: Products | kommu.ai
 ---
-<div id="productlocationizer">
+<div id="productlocationizer" class="mb-3">
     <h2>Productlocationizer</h2>
     <h3>Find the right model for your car:</h3>
-    <form>
-        <div class="form-group">
-            <select aria-label="Select your car model" class="form-control" id="localizer">
+    <div class="row">
+        <div class="col-sm">
+            <select aria-label="Select your car model" class="form-select" id="localizer">
                 {% for product in site.products %}
                     <option value="DIVIDER">----------</option>
                     {% for car in product.cars %}
@@ -16,8 +16,10 @@ title: Products | kommu.ai
                 {% endfor %}
             </select>
         </div>
-        <button class="btn btn-default" id="localizerer">Jom</button>
-    </form>
+        <div class="col-sm-1">
+            <button class="btn btn-light" id="localizerer">Jom</button>
+        </div>
+    </div>
 </div>
 
 <div>
