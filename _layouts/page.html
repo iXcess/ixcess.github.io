@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	{% include head.html %}
+
+	<body>
+		{% include js.html %}
+		{% include navigation.html %}
+        <div id="container">
+            {{ content }}
+        </div>
+		{% include footer.html %}
+	</body>
+<style>
+#container {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+}
+
+@media (max-width: 991px) {
+    #container {
+        width: 720px;
+    }
+};
+
+</style>
+</html>

@@ -1,0 +1,70 @@
+---
+layout: page
+title: Products | kommu.ai
+---
+<div id="productlocationizer">
+    <h2>Productlocationizer</h2>
+    <h3>Find the right model for your car:</h3>
+    <form>
+        <div class="form-group">
+            <select aria-label="Select your car model" class="form-control" id="localizer">
+                {% for product in site.products %}
+                    <option value="DIVIDER">----------</option>
+                    {% for car in product.cars %}
+                    <option value="{{ product.url }}">{{ car }}</option>
+                    {% endfor %}
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-default" id="localizerer">Jom</button>
+    </form>
+</div>
+
+<div>
+    <h3>All Products</h3>
+    <div class="products">
+        {% for product in site.products %}
+        <a class="product" href="{{ product.url }}">
+            <h4>{{ product.title }}</h4>
+            <p>{{ product.description }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+(function() {
+        const localizer = $("#localizer")[0];
+        $("#localizerer").on("click", function() {
+                if (localizer.value == "DIVIDER") {
+                    return;
+                    }
+                window.location.href = localizer.value;
+            });
+    })();
+</script>
+<style>
+#productlocationizer {
+    padding: 20px;
+}
+#productlocationizer, #productlocationizer *{
+    background-color: #0000a4;
+    color: white;
+}
+
+.products {
+    display: flex;
+}
+.product {
+    display: block;
+    width: 300px;
+    height: 150px;
+    border: solid 2px black;
+    margin: 20px;
+    padding: 10px;
+}
+.product:link, .product:visited, .product:active, .product:hover {
+    color: black;
+    text-decoration: none;
+}
+</style>
