@@ -1,0 +1,14 @@
+- label: Products
+  url: /products
+
+- label: About
+  url: /about
+
+- label: Faq
+  url: /faq
+
+- label: Terms
+  url: /terms
+
+- label: Privacy Policy
+  url: /privacy
