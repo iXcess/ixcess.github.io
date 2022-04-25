@@ -11,7 +11,7 @@ title: Products | kommu.ai
                 {% for product in site.products %}
                     <option value="DIVIDER">----------</option>
                     {% for car in product.cars %}
-                    <option value="{{ product.url }}">{{ car }}</option>
+                    <option value="{{ product.url | relative_url }}">{{ car }}</option>
                     {% endfor %}
                 {% endfor %}
             </select>
@@ -27,11 +27,11 @@ title: Products | kommu.ai
     <div class="products">
         {% for product in site.products %}
         <div class="card m-1" style="width: 18rem;">
-            <img src="/img/{{ product.img }}" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;">
+            <img src="{{ "" | relative_url }}/img/{{ product.img }}" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;">
             <div class="card-body" style="height: 13rem">
                 <h5 class="card-title">{{ product.title }}</h5>
                 <p class="card-text">{{ product.description }}</p>
-                <a href="{{ product.url }}" class="btn btn-primary" style="display: block; position: absolute; bottom: 20px; right: 20px;">Lihat</a>
+                <a href="{{ product.url | relative_url }}" class="btn btn-primary" style="display: block; position: absolute; bottom: 20px; right: 20px;">Lihat</a>
             </div>
         </div>
         {% endfor %}

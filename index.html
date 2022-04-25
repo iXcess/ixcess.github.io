@@ -15,7 +15,7 @@ title: Kommu-Revolutionalizing Self-Driving
 							{% for social in site.social %}
                             <a href="{{ social.url }}">
                                 <button class="btn btn-light">
-                                    <img src="/img/icons/{{ social.title }}.svg" width="16" style="height:2em; margin-right: 2px;">
+                                    <img src="{{ "" | relative_url }}/img/icons/{{ social.title }}.svg" width="16" style="height:2em; margin-right: 2px;">
                                     <span class="network-name">{{ social.title }}</span>
                                 </button>
                             </a>
