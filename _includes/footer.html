@@ -5,11 +5,11 @@
             <div class="col-md-8">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="{{ "/" | relative_url }}">Home</a>
                     </li>
                     {% for nav in site.data.navs %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ nav.url }}">{{ nav.label }}</a>
+                        <a class="nav-link" href="{{ nav.url | relative_url }}">{{ nav.label }}</a>
                     </li>
                     {% endfor %}
                 </ul>

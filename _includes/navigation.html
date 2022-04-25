@@ -1,7 +1,7 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-md py-3 navbar-dark sticky-top" role="navigation">
+<nav class="navbar navbar-expand-md py-3 navbar-dark sticky-top" role="navigation" style="background-color: #000000;">
     <div class="container-fluid">
-        <button class="custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -9,7 +9,7 @@
             <ul class="navbar-nav me-auto">
                 {% for nav in site.data.navs %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ nav.url }}">{{ nav.label }}</a>
+                    <a class="nav-link" href="{{ nav.url | relative_url }}">{{ nav.label }}</a>
                 </li>
                 {% endfor %}
             </ul>

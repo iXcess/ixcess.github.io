@@ -1,5 +1,52 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p>{{ page.description }}</p>
+
+<div class="row">
+    <div class="col">
+        <img src="{{ "" | relative_url }}/img/{{ page.img }}" style="width: 100%;">
+    </div>
+    <div class="col">
+        <h2>{{ page.title }}</h2>
+        <p>{{ page.description }}</p>
+
+        <div>
+            <select aria-label="Select your car model" class="form-select mb-1" id="localizer">
+            </select>
+            <button class="btn btn-primary" id="localizerer">Jom bincang dgn kita</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(() => {
+    const selectedCar = new URLSearchParams(window.location.search).get("car");
+
+    const product_cars = [
+            {% for car in page.cars %}
+            {
+                label:"{{ car }}",
+            },
+            {% endfor %}
+        ].sort((a, b) => { return b.label < a.label });
+
+    const localizer = document.getElementById("localizer");
+    const localizerer = document.getElementById("localizerer");
+    for (const product_car of product_cars) {
+        const option = document.createElement("option");
+        option.value = product_car.label;
+        option.innerText = product_car.label;
+        if (selectedCar === product_car.label) {
+            option.selected = true;
+        }
+        localizer.appendChild(option);
+    }
+    localizerer.onclick = () => {
+        const params = new URLSearchParams();
+        params.append("text", `{{ page.title }}\n${localizer.value}`);
+
+        const url = "https://wa.me/60149676780?" + params.toString();
+        window.open(url, "_blank");
+    };
+})();
+</script>

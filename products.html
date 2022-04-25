@@ -8,12 +8,6 @@ title: Products | kommu.ai
     <div class="row align-items-center">
         <div class="col">
             <select aria-label="Select your car model" class="form-select" id="localizer">
-                {% for product in site.products %}
-                    <option value="DIVIDER">----------</option>
-                    {% for car in product.cars %}
-                    <option value="{{ product.url }}">{{ car }}</option>
-                    {% endfor %}
-                {% endfor %}
             </select>
         </div>
         <div class="col">
@@ -27,11 +21,11 @@ title: Products | kommu.ai
     <div class="products">
         {% for product in site.products %}
         <div class="card m-1" style="width: 18rem;">
-            <img src="/img/{{ product.img }}" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;">
+            <img src="{{ "" | relative_url }}/img/{{ product.img }}" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;">
             <div class="card-body" style="height: 13rem">
                 <h5 class="card-title">{{ product.title }}</h5>
                 <p class="card-text">{{ product.description }}</p>
-                <a href="{{ product.url }}" class="btn btn-primary" style="display: block; position: absolute; bottom: 20px; right: 20px;">Lihat</a>
+                <a href="{{ product.url | relative_url }}" class="btn btn-primary" style="display: block; position: absolute; bottom: 20px; right: 20px;">Lihat</a>
             </div>
         </div>
         {% endfor %}
@@ -39,14 +33,34 @@ title: Products | kommu.ai
 </div>
 
 <script>
-(function() {
-        const localizer = $("#localizer")[0];
-        $("#localizerer").on("click", function() {
+(() => {
+        const product_cars = [
+                {% for product in site.products %}
+                {% for car in product.cars %}
+                {
+                    label:"{{ car }}",
+                    product_url: "{{ product.url | relative_url }}",
+                },
+                {% endfor %}
+                {% endfor %}
+            ].sort((a, b) => { return b.label < a.label });
+
+        const localizer = document.getElementById("localizer");
+        const localizerer = document.getElementById("localizerer");
+        for (const product_car of product_cars) {
+            const option = document.createElement("option");
+            option.value = product_car.product_url;
+            option.innerText = product_car.label;
+            localizer.appendChild(option);
+        }
+        localizerer.onclick = () => {
                 if (localizer.value == "DIVIDER") {
                     return;
                     }
-                window.location.href = localizer.value;
-            });
+                const params = new URLSearchParams();
+                params.append("car", localizer.selectedOptions[0].innerText);
+                window.location.href = `${localizer.value}?${params.toString()}`;
+            };
     })();
 </script>
 <style>
