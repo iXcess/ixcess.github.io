@@ -57,7 +57,9 @@ title: Products | kommu.ai
                 if (localizer.value == "DIVIDER") {
                     return;
                     }
-                window.location.href = localizer.value;
+                const params = new URLSearchParams();
+                params.append("car", localizer.selectedOptions[0].innerText);
+                window.location.href = `${localizer.value}?${params.toString()}`;
             };
     })();
 </script>

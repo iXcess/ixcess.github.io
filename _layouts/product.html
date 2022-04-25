@@ -20,6 +20,8 @@ layout: default
 
 <script>
 (() => {
+    const selectedCar = new URLSearchParams(window.location.search).get("car");
+
     const product_cars = [
             {% for car in page.cars %}
             {
@@ -34,6 +36,9 @@ layout: default
         const option = document.createElement("option");
         option.value = product_car.label;
         option.innerText = product_car.label;
+        if (selectedCar === product_car.label) {
+            option.selected = true;
+        }
         localizer.appendChild(option);
     }
     localizerer.onclick = () => {
