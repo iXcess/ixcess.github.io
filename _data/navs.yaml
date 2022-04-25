@@ -1,3 +1,6 @@
+- label: Home
+  url: /
+  
 - label: Products
   url: /products
 
