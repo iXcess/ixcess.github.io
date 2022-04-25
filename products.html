@@ -39,14 +39,15 @@ title: Products | kommu.ai
 </div>
 
 <script>
-(function() {
-        const localizer = $("#localizer")[0];
-        $("#localizerer").on("click", function() {
+(() => {
+        const localizer = document.getElementById("localizer");
+        const localizerer = document.getElementById("localizerer");
+        localizerer.onclick = () => {
                 if (localizer.value == "DIVIDER") {
                     return;
                     }
                 window.location.href = localizer.value;
-            });
+            };
     })();
 </script>
 <style>
