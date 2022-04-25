@@ -12,9 +12,6 @@ layout: default
 
         <div>
             <select aria-label="Select your car model" class="form-select mb-1" id="localizer">
-                {% for car in page.cars %}
-                <option value="{{ car }}">{{ car }}</option>
-                {% endfor %}
             </select>
             <button class="btn btn-primary" id="localizerer">Jom bincang dgn kita</button>
         </div>
@@ -23,8 +20,22 @@ layout: default
 
 <script>
 (() => {
+    const product_cars = [
+            {% for car in page.cars %}
+            {
+                label:"{{ car }}",
+            },
+            {% endfor %}
+        ].sort((a, b) => { return b.label < a.label });
+
     const localizer = document.getElementById("localizer");
     const localizerer = document.getElementById("localizerer");
+    for (const product_car of product_cars) {
+        const option = document.createElement("option");
+        option.value = product_car.label;
+        option.innerText = product_car.label;
+        localizer.appendChild(option);
+    }
     localizerer.onclick = () => {
         const params = new URLSearchParams();
         params.append("text", `{{ page.title }}\n${localizer.value}`);

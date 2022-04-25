@@ -8,12 +8,6 @@ title: Products | kommu.ai
     <div class="row align-items-center">
         <div class="col">
             <select aria-label="Select your car model" class="form-select" id="localizer">
-                {% for product in site.products %}
-                    <option value="DIVIDER">----------</option>
-                    {% for car in product.cars %}
-                    <option value="{{ product.url | relative_url }}">{{ car }}</option>
-                    {% endfor %}
-                {% endfor %}
             </select>
         </div>
         <div class="col">
@@ -40,8 +34,25 @@ title: Products | kommu.ai
 
 <script>
 (() => {
+        const product_cars = [
+                {% for product in site.products %}
+                {% for car in product.cars %}
+                {
+                    label:"{{ car }}",
+                    product_url: "{{ product.url | relative_url }}",
+                },
+                {% endfor %}
+                {% endfor %}
+            ].sort((a, b) => { return b.label < a.label });
+
         const localizer = document.getElementById("localizer");
         const localizerer = document.getElementById("localizerer");
+        for (const product_car of product_cars) {
+            const option = document.createElement("option");
+            option.value = product_car.product_url;
+            option.innerText = product_car.label;
+            localizer.appendChild(option);
+        }
         localizerer.onclick = () => {
                 if (localizer.value == "DIVIDER") {
                     return;
