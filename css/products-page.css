@@ -1,0 +1,49 @@
+.btn-tertiary{
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 50px;
+    width: max-content;
+    font-family: "Raleway", Sans-serif;
+    border-color: black;
+    text-align: center;
+    outline: none;
+}
+
+.btn-tertiary:hover{
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+
+}
+
+
+#productlocationizer {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products * {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+ul {
+    display: list-item;
+    list-style-position: inside;
+}
+
+ul::marker {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}

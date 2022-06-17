@@ -1,7 +1,14 @@
 ---
 layout: product
 title: Compatible+ Set
-description: Your car is giri giri right there, so we go a wee bit further to support it.  At a cost, of course *wink*.
+description: Standard Set + KommuActuator for Car Controls.
+comments: KommuActuator is used to provide controls to the car, as the car does not have a accessible controls point.
+includes: 
+ - 1 x Kommu Vision 
+ - 1 x KommuSafety
+ - 1 x KommuPower
+ - 1 x KommuActuator
+price: RM 3,599
 img: apollo.jpg
 cars:
  - Myvi Old One

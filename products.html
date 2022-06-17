@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Products | kommu.ai
+stylesheet: products
 ---
 <div id="productlocationizer">
-    <h2>Productlocationizer</h2>
     <h3>Find the right model for your car:</h3><br>
     <div class="row align-items-center">
         <div class="col">
@@ -11,7 +11,7 @@ title: Products | kommu.ai
             </select>
         </div>
         <div class="col">
-            <button class="btn btn-light" id="localizerer">Jom</button>
+            <button class="btn btn-tertiary" id="localizerer">Search</button>
         </div>
     </div>
 </div>
@@ -25,7 +25,7 @@ title: Products | kommu.ai
             <div class="card-body" style="height: 13rem">
                 <h5 class="card-title">{{ product.title }}</h5>
                 <p class="card-text">{{ product.description }}</p>
-                <a href="{{ product.url | relative_url }}" class="btn btn-primary" style="display: block; position: absolute; bottom: 20px; right: 20px;">Lihat</a>
+                <a href="{{ product.url | relative_url }}" class="btn btn-tertiary" style="display: block; position: absolute; bottom: 20px; right: 20px;">View</a>
             </div>
         </div>
         {% endfor %}
@@ -63,25 +63,3 @@ title: Products | kommu.ai
             };
     })();
 </script>
-<style>
-#productlocationizer {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px;
-    border-radius: 5px;
-}
-#productlocationizer, #productlocationizer *{
-    background-color: #0000a4;
-    color: white;
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.products * {
-    flex-shrink: 0;
-    flex-grow: 0;
-}
-</style>

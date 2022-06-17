@@ -1,5 +1,6 @@
 ---
 layout: default
+stylesheet: products
 ---
 
 <div class="row">
@@ -8,12 +9,23 @@ layout: default
     </div>
     <div class="col">
         <h2>{{ page.title }}</h2>
-        <p>{{ page.description }}</p>
+        <p>{{ page.comments }}</p>
+        <br>
+        <h2>{{ page.price }}</h2>
 
         <div>
+            <h3>Select your car model:</h3>
             <select aria-label="Select your car model" class="form-select mb-1" id="localizer">
             </select>
-            <button class="btn btn-primary" id="localizerer">Jom bincang dgn kita</button>
+            <br>
+
+            <button class="btn btn-tertiary" id="localizerer">Buy Now</button>
+        </div>
+        <div>
+        <br><br>
+        
+            <h4>Includes</h4>
+            <div id="includes"></div>
         </div>
     </div>
 </div>
@@ -48,5 +60,26 @@ layout: default
         const url = "https://wa.me/60149676780?" + params.toString();
         window.open(url, "_blank");
     };
+
+    const includes = [            
+            {% for incl in page.includes %}
+            {
+                desc:"{{ incl }}",
+            },
+            {% endfor %} ];
+
+    const includesDiv = document.getElementById("includes");
+
+    for (const include of includes) {
+        const feature = document.createElement("div");
+        const bullets = document.createElement("ul");
+        console.log(include)
+        bullets.textContent = include.desc ;
+        bullets.style = "list-style-type:disc";
+        feature.appendChild(bullets);
+        includesDiv.appendChild(feature);
+    }
+
+
 })();
 </script>

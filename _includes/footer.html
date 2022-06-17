@@ -1,23 +1,13 @@
 <!-- Footer -->
-<footer>
+<footer  class="footer mt-auto text-center bg-black">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ "/" | relative_url }}">Home</a>
-                    </li>
-                    {% for nav in site.data.navs %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ nav.url | relative_url }}">{{ nav.label }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <p class="copyright text-muted small">{{ site.copyright }}</p>
-            </div>
-            <div class="col-md-4">
-                {{ site.credits }}
-            </div>
+        <div class="row d-flex justify-content-center">
+
+                <p id="footer" class="copyright text-white">{{ site.copyright }}</p>
+
         </div>
     </div>
 </footer>
+<style>
+    #footer { font-family: "Raleway",sans-serif !important; font-weight: 700; font-size: 16px; text-align: center;}
+</style>
