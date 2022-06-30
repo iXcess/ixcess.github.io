@@ -3,18 +3,18 @@ layout: landing
 title: Kommu - Revolutionalizing Self-Driving
 stylesheet: asdf
 ---
-<div>
-    <div id="bgimage">
-    </div>
-    <div id="bgvideo">
-        <video loop autoplay muted width="100%">
-            <source src={{ "/assets/small.mp4#t=20" | relative_url }} />
-        </video>
-    </div>
-    <div id="bgvideo-overlay"></div>
-</div>
 <section id="home">
-	<div class="intro-header">
+
+	<section class="intro-header">
+        <div id="bgimage">
+        </div>
+
+        <div id="bgvideo">
+            <video id=videoplayer loop autoplay muted >
+                <source src={{ "/assets/small.mp4#t=20" | relative_url }} />
+            </video>
+        </div>
+        <div id="bgvideo-overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -34,7 +34,6 @@ stylesheet: asdf
                               </div>
                             </div>
                         </div>
-                    
 
                         <br> <br> <br>
                         <iframe id = "introyoutube" src="https://www.youtube.com/embed/y6VlJdB3WWI">
@@ -43,9 +42,10 @@ stylesheet: asdf
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
     <div class="container">
+        
     <div>
         <h1 style = "text-align: center;">What is KommuAssisst?</h1>
     </div>
