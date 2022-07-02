@@ -7,7 +7,7 @@ includes:
  - 1 x Kommu Vision 
  - 1 x KommuSafety
  - 1 x KommuPower
-img: oreo.jpg
+img: standard
 price: RM 3,499
 cars:
  - Myvi FL

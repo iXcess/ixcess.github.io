@@ -9,7 +9,7 @@ includes:
  - 1 x KommuPower
  - 1 x KommuActuator
 price: RM 3,599
-img: apollo.jpg
+img: compatible
 cars:
  - Myvi Old One
  - Axia

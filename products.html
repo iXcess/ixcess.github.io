@@ -3,35 +3,33 @@ layout: default
 title: Products | kommu.ai
 stylesheet: products
 ---
-<div id="productlocationizer">
+<div class="container" id="productlocationizer">
     <h3>Find the right model for your car:</h3><br>
     <div class="row align-items-center">
-        <div class="col">
+        <div class="col-lg-6 col-md-12 mb-4">
             <select aria-label="Select your car model" class="form-select" id="localizer">
             </select>
         </div>
-        <div class="col">
+        <div class="col-lg-6 col-md-12 mb-4">
             <button class="btn btn-tertiary" id="localizerer">Search</button>
         </div>
     </div>
-</div>
-
-<div>
-    <h3 class="m-4">All Products</h3>
-    <div class="products">
-        {% for product in site.products %}
-        <div class="card m-1" style="width: 18rem;">
-            <img src="{{ "" | relative_url }}/img/{{ product.img }}" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;">
-            <div class="card-body" style="height: 13rem">
-                <h5 class="card-title">{{ product.title }}</h5>
-                <p class="card-text">{{ product.description }}</p>
-                <a href="{{ product.url | relative_url }}" class="btn btn-tertiary" style="display: block; position: absolute; bottom: 20px; right: 20px;">View</a>
+    <h3 class="mt-4 mb-4">All Products</h3>
+        <div class="products">
+            {% for product in site.products %}
+            <div class="col md-6 sm-12">
+                <div class="card m-1" style="width: 18rem;">
+                    <img src="{{ "" | relative_url }}/img/{{ product.img }}-1.jpg" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;">
+                    <div class="card-body" style="height: 13rem">
+                        <h5 class="card-title">{{ product.title }}</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <a href="{{ product.url | relative_url }}" class="btn btn-tertiary" style="display: block; position: absolute; bottom: 20px; right: 20px;">View</a>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
 </div>
-
 <script>
 (() => {
         const product_cars = [

@@ -2,10 +2,31 @@
 layout: default
 stylesheet: products
 ---
-
+<div>
+    <a class="btn ms-auto" href= "{{ "" | relative_url }}/products/" style="font-weight: bold;font-size:20px">
+        <  Back
+    </a>
+</div>
 <div class="row">
-    <div class="col">
-        <img src="{{ "" | relative_url }}/img/{{ page.img }}" style="width: 100%;">
+    <div class="col-lg-6 col-md-12 col-12 mb-4">
+        <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" class = "img-fluid w-100" id= "MainImage"  style="border-radius: 5%; margin-bottom: 10px;">
+        <div class="small-img-group" >
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" width="100%" class="small-img" style="border-style: solid; border-color: #33B9FF; border-width: 5px;" >
+            </div>
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/{{ page.img }}-2.jpg" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/{{ page.img }}-3.jpg" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/{{ page.img }}-4.jpg" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/{{ page.img }}-5.jpg" width="100%" class="small-img">
+            </div>
+        </div>
     </div>
     <div class="col">
         <h2>{{ page.title }}</h2>
@@ -82,4 +103,58 @@ stylesheet: products
 
 
 })();
+
+var mainImg = document.getElementById('MainImage');
+var smallImg = document.getElementsByClassName('small-img');
+
+
+// Disgusting codes. will refactor if i feel like it.
+smallImg[0].onclick = function(){
+    mainImg.src = smallImg[0].src;
+    
+
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "0px";
+    smallImg[0].style.border = "5px solid #33B9FF";
+}
+
+smallImg[1].onclick = function(){
+    mainImg.src = smallImg[1].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "5px solid #33B9FF";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "0px";
+}
+smallImg[2].onclick = function(){
+    mainImg.src = smallImg[2].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "5px solid #33B9FF";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "0px";
+}
+smallImg[3].onclick = function(){
+    mainImg.src = smallImg[3].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "5px solid #33B9FF";
+    smallImg[4].style.border = "0px";
+}
+smallImg[4].onclick = function(){
+    mainImg.src = smallImg[4].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "5px solid #33B9FF";
+}
+
 </script>
