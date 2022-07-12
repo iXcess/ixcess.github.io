@@ -354,8 +354,6 @@ h6 {
         height: calc(100vw*0.75*9/16); 
         border-radius: 25px;
     }
-    
-
 }
 
 @media(max-width:767px) {

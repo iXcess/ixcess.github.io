@@ -4,6 +4,9 @@
 - label: Products
   url: /products
 
+- label: Support
+  url: /support
+
 - label: About
   url: /about
 
