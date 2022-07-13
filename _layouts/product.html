@@ -52,28 +52,35 @@ stylesheet: products
 </div>
 
 <script>
-(() => {
-    const selectedCar = new URLSearchParams(window.location.search).get("car");
-
-    const product_cars = [
-            {% for car in page.cars %}
-            {
-                label:"{{ car }}",
-            },
-            {% endfor %}
-        ].sort((a, b) => { return b.label < a.label });
-
     const localizer = document.getElementById("localizer");
     const localizerer = document.getElementById("localizerer");
-    for (const product_car of product_cars) {
-        const option = document.createElement("option");
-        option.value = product_car.label;
-        option.innerText = product_car.label;
-        if (selectedCar === product_car.label) {
-            option.selected = true;
-        }
-        localizer.appendChild(option);
+
+    async function load() {
+        const selectedCar = new URLSearchParams(window.location.search).get("car");
+        const remote = "https://raw.githubusercontent.com/kommuai/bukapilot/snapshot/selfdrive/car/supported_vehicle.json";
+        const resp = await (await fetch(remote)).json();
+
+        let list = [];
+        switch ("{{ page.key }}") {
+        case "standard":
+            list = resp.standard;
+            break;
+        case "semi_acc":
+            list = resp.semi_acc;
+            break;
+        };
+
+        list.forEach((vehicle) => {
+            const option = document.createElement("option");
+            option.value = `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`;
+            option.innerText = option.value;
+            option.selected = (selectedCar === option.value);
+            localizer.appendChild(option);
+        });
     }
+
+    window.onload = load;
+
     localizerer.onclick = () => {
         const params = new URLSearchParams();
         params.append("text", `{{ page.title }}\n${localizer.value}`);
@@ -100,9 +107,6 @@ stylesheet: products
         feature.appendChild(bullets);
         includesDiv.appendChild(feature);
     }
-
-
-})();
 
 var mainImg = document.getElementById('MainImage');
 var smallImg = document.getElementsByClassName('small-img');
