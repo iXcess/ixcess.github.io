@@ -35,11 +35,3 @@ social:
   - title: facebook
     url: https://instagram.com/kommuai
 
-
-plugins:
-  - jekyll-get-json
-
-
-jekyll_get_json:
-  - data: supported_vehicles
-    json: 'https://raw.githubusercontent.com/kommuai/bukapilot/snapshot/selfdrive/car/supported_vehicle.json'

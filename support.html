@@ -5,6 +5,45 @@ title: Supported Vehicle
 <head>
     <link href="{{ "/css/support-page.css" | relative_url }}" rel="stylesheet">
 </head>
+<script>
+    async function load() {
+        const standard = document.getElementById("standard");
+        const semi_acc = document.getElementById("semi_acc");
+        const remote = "https://raw.githubusercontent.com/kommuai/bukapilot/snapshot/selfdrive/car/supported_vehicle.json";
+        const raw_resp = await fetch(remote);
+        const resp = await raw_resp.json();
+
+        resp.standard.forEach((vehicle) => {
+            const tr = document.createElement("tr");
+            td(tr, vehicle.brand);
+            td(tr, vehicle.model);
+            td(tr, vehicle.year);
+            td(tr, vehicle.variant);
+            td(tr, vehicle.acc_low_speed ? "✔" : "✘");
+            td(tr, vehicle.acc_stop_and_go ? "✔" : "✘");
+            td(tr, vehicle.lkc_torque);
+            standard.appendChild(tr);
+        });
+
+        resp.semi_acc.forEach((vehicle) => {
+            const tr = document.createElement("tr");
+            td(tr, vehicle.brand);
+            td(tr, vehicle.model);
+            td(tr, vehicle.year);
+            td(tr, vehicle.variant);
+            td(tr, vehicle.lkc_torque);
+            semi_acc.appendChild(tr);
+        });
+    }
+
+    window.onload = load;
+
+    function td(row, content) {
+        const td = document.createElement("td");
+        td.innerText = content;
+        row.appendChild(td);
+    }
+</script>
 <section class="section-support">
     <div>
         <h2 style="text-align: center; text-decoration: underline;">
@@ -23,19 +62,7 @@ title: Supported Vehicle
                     <th scope="col">LKC</th>
                 </tr>
             </thead>
-            <tbody>
-                {% for vehicle in site.data.supported_vehicles.standard %}
-                <tr >
-                    <th scope="row">{{vehicle.brand}}</th>
-                    <td>{{vehicle.model}}</td>
-                    <td>{{vehicle.year}}</td>
-                    <td>{{vehicle.variant}}</td>
-                    <td>{% if vehicle.acc_low_speed == true %} ✔ {% else %} ✘ {% endif %}</td>
-                    <td>{% if vehicle.acc_stop_and_go == true %} ✔ {% else %} ✘ {% endif %}</td>
-                    <td>{{vehicle.lkc_torque}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <tbody id="standard"></tbody>
         </table>
     </div>
 
@@ -55,17 +82,7 @@ title: Supported Vehicle
                     <th scope="col">LKC</th>
                 </tr>
             </thead>
-            <tbody>
-                {% for vehicle in site.data.supported_vehicles.semi_acc %}
-                <tr>
-                    <th scope="row">{{vehicle.brand}}</th>
-                    <td>{{vehicle.model}}</td>
-                    <td>{{vehicle.year}}</td>
-                    <td>{{vehicle.variant}}</td>
-                    <td>{{vehicle.lkc_torque}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <tbody id="semi_acc"></tbody>
         </table>
     </div>
 </section>
