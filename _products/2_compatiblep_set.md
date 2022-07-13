@@ -10,8 +10,6 @@ includes:
  - 1 x KommuActuator
 price: RM 3,599
 img: compatible
-cars:
- - Myvi Old One
- - Axia
+key: semi_acc
 ---
 

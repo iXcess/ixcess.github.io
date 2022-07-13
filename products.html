@@ -31,33 +31,44 @@ stylesheet: products
         </div>
 </div>
 <script>
-(() => {
-        const product_cars = [
-                {% for product in site.products %}
-                {% for car in product.cars %}
-                {
-                    label:"{{ car }}",
-                    product_url: "{{ product.url | relative_url }}",
-                },
-                {% endfor %}
-                {% endfor %}
-            ].sort((a, b) => { return b.label < a.label });
+    const localizerer = document.getElementById("localizerer");
+    const localizer = document.getElementById("localizer");
 
-        const localizer = document.getElementById("localizer");
-        const localizerer = document.getElementById("localizerer");
-        for (const product_car of product_cars) {
-            const option = document.createElement("option");
-            option.value = product_car.product_url;
-            option.innerText = product_car.label;
-            localizer.appendChild(option);
-        }
-        localizerer.onclick = () => {
-                if (localizer.value == "DIVIDER") {
-                    return;
-                    }
-                const params = new URLSearchParams();
-                params.append("car", localizer.selectedOptions[0].innerText);
-                window.location.href = `${localizer.value}?${params.toString()}`;
-            };
-    })();
+    async function load() {
+        const remote = "https://raw.githubusercontent.com/kommuai/bukapilot/snapshot/selfdrive/car/supported_vehicle.json";
+        const resp = await (await fetch(remote)).json();
+
+        const product_urls = {
+        {% for product in site.products %}
+            {{ product.key }}: "{{ product.url | relative_url }}",
+        {% endfor %}
+        };
+
+        []
+            .concat(
+                resp.standard.map(vehicle => ({
+                        label: `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`,
+                        key: "standard"
+                    })),
+                resp.semi_acc.map(vehicle => ({
+                        label: `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`,
+                        key: "semi_acc"
+                    })),
+                )
+            .sort((a, b) => { return b.label < a.label })
+            .forEach((item) => {
+                    const option = document.createElement("option");
+                    option.value = product_urls[item.key];
+                    option.innerText = item.label;
+                    localizer.appendChild(option);
+                });
+    }
+
+    window.onload = load;
+
+    localizerer.onclick = () => {
+            const params = new URLSearchParams();
+            params.append("car", localizer.selectedOptions[0].innerText);
+            window.location.href = `${localizer.value}?${params.toString()}`;
+        };
 </script>

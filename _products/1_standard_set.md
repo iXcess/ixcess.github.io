@@ -9,8 +9,5 @@ includes:
  - 1 x KommuPower
 img: standard
 price: RM 3,499
-cars:
- - Myvi FL
- - Ativa
- - Corolla Altis
+key: standard
 ---
