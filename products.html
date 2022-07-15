@@ -4,26 +4,32 @@ title: Products | kommu.ai
 stylesheet: products
 ---
 <div class="container" id="productlocationizer">
-    <h3>Find the right model for your car:</h3><br>
+    <h3 style = "text-align: center;">Find the right model for your car:</h3><br>
     <div class="row align-items-center">
-        <div class="col-lg-6 col-md-12 mb-4">
+        <div class="col-lg-7 col-md-12 mb-4">
             <select aria-label="Select your car model" class="form-select" id="localizer">
             </select>
         </div>
-        <div class="col-lg-6 col-md-12 mb-4">
+        <div class="col-lg-5 col-md-12 mb-4 text-center">
             <button class="btn btn-tertiary" id="localizerer">Search</button>
         </div>
     </div>
-    <h3 class="mt-4 mb-4">All Products</h3>
+    <h3 class="mt-4 mb-4 text-center">Products</h3>
         <div class="products">
             {% for product in site.products %}
             <div class="col md-6 sm-12">
                 <div class="card m-1" style="width: 18rem;">
-                    <img src="{{ "" | relative_url }}/img/{{ product.img }}-1.jpg" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;">
+                    <a href="{{ product.url | relative_url }}"><img src="{{ "" | relative_url }}/img/{{ product.img }}-1.jpg" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;"></a>
+                    
                     <div class="card-body" style="height: 13rem">
-                        <h5 class="card-title">{{ product.title }}</h5>
+                        <div>
+                            <a href="{{ product.url | relative_url }}"><h5 class="card-title">{{ product.title }}</h5></a>
+                        </div>
+                        
                         <p class="card-text">{{ product.description }}</p>
-                        <a href="{{ product.url | relative_url }}" class="btn btn-tertiary" style="display: block; position: absolute; bottom: 20px; right: 20px;">View</a>
+                        <div style="text-align: center;">
+                            <a href="{{ product.url | relative_url }}" class="btn btn-tertiary">View</a>
+                        </div>
                     </div>
                 </div>
             </div>

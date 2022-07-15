@@ -1,7 +1,12 @@
 ---
 layout: product
-title: Compatible+ Set
-description: Standard Set + KommuActuator for Car Controls.
+title: Semi-ACC Set
+description: 
+- Full Range ACC
+    - Traffic Jam Low Speed Follow
+    - Traffic Jam Stop & Go
+- Full Range Active LKC
+
 comments: KommuActuator is used to provide controls to the car, as the car does not have a accessible controls point.
 includes: 
  - 1 x Kommu Vision 
@@ -12,4 +17,3 @@ price: RM 3,599
 img: compatible
 key: semi_acc
 ---
-

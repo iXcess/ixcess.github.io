@@ -161,7 +161,7 @@ h6 {
 
 .main-description {
     text-align: center;
-    padding: 0px 40px;
+    padding: 0px 20px;
     margin: 75px 0px;
 }
 
@@ -174,7 +174,7 @@ h6 {
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
-    text-align: justify;
+    text-align: center;
 }
 
 .main-btm-container {
@@ -210,6 +210,7 @@ h6 {
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
+ 
 }
 
 .main-btm-img {
@@ -262,6 +263,18 @@ h6 {
     border-color: #4a80ec;
     color: white;
     text-decoration: underline;
+
+}
+
+@media(max-width:1499px) {
+
+    #home > .container {
+        padding: 0px 40px;
+    }
+
+    .main-btm-support {
+        padding: 0px 40px;
+    }
 
 }
 
@@ -349,12 +362,25 @@ h6 {
         font-size: 2.5em;
     }
 
+    .main-description {
+        text-align: center;
+        padding: 0px 40px;
+        margin: 75px 0px;
+    }
+
     #introyoutube {
         width:calc(100vw*0.75); 
         height: calc(100vw*0.75*9/16); 
         border-radius: 25px;
     }
+
+    
+    #home > .container {
+        padding: 0px 12px;
+    }
 }
+
+
 
 @media(max-width:767px) {
     .banner h2 {
@@ -379,6 +405,7 @@ h6 {
     .main-btm-description{
         padding:30px;
         margin:30px 0px 0px 0px;
+        text-align: center;
     }
 
     .main-btm-support{
@@ -388,7 +415,7 @@ h6 {
 }
 
 footer {
-    padding: 50px 0;
+    padding: 50px 0px 50px 0px;
     background-color: #f8f8f8;
 }
 

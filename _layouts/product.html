@@ -2,11 +2,11 @@
 layout: default
 stylesheet: products
 ---
-<div>
+<!-- <div>
     <a class="btn ms-auto" href= "{{ "" | relative_url }}/products/" style="font-weight: bold;font-size:20px">
         <  Back
     </a>
-</div>
+</div> -->
 <div class="row">
     <div class="col-lg-6 col-md-12 col-12 mb-4">
         <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" class = "img-fluid w-100" id= "MainImage"  style="border-radius: 5%; margin-bottom: 10px;">
@@ -45,7 +45,7 @@ stylesheet: products
         <div>
         <br><br>
         
-            <h4>Includes</h4>
+            <h4>What's in the Box?</h4>
             <div id="includes"></div>
         </div>
     </div>
@@ -83,7 +83,7 @@ stylesheet: products
 
     localizerer.onclick = () => {
         const params = new URLSearchParams();
-        params.append("text", `{{ page.title }}\n${localizer.value}`);
+        params.append("text", `Hey, I am interested in the {{ page.title }} for ${localizer.value}`);
 
         const url = "https://wa.me/60149676780?" + params.toString();
         window.open(url, "_blank");
