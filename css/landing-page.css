@@ -125,7 +125,7 @@ h4,
 h5,
 h6 {
     font-family: "Raleway",sans-serif;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .lead {
@@ -365,7 +365,7 @@ h6 {
     .main-description {
         text-align: center;
         padding: 0px 40px;
-        margin: 75px 0px;
+        margin: 75px 0px 0px 0px;
     }
 
     #introyoutube {
@@ -432,3 +432,10 @@ p.copyright {
     vertical-align: bottom;
 
 }
+
+@font-face { 
+    font-family:  "Raleway",sans-serif; 
+    src: url({{ "/css/fonts/Raleway-Regular.ttf" | relative_url }});
+    font-weight: normal; 
+}
+    

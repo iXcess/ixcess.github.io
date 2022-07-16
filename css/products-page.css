@@ -53,9 +53,57 @@
 ul {
     display: list-item;
     list-style-position: inside;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+
+.card-text > ul {
+    display: list-item;
+    list-style-position:inside;
+    padding-left: 5px;
+}
+
+.card-text > ul > ul {
+    display: list-item;
+    list-style-position: inside;
+    padding-left:10px;
 }
 
 ul::marker {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-right: 10px;
+    padding-left: 10px;
+}
+
+.card-title {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: black;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+
+@media (max-width: 991px) {
+    #main-content {
+        width: 90vw;
+    }
+
+    #localizer {
+        align-self: center;
+        max-width: 400px;
+        display: inline;
+    }
+
+    #buy-btn {
+        display: inline;
+    }
+
+    #buyButtonDiv{
+        text-align: center;
+    }
+    
 }

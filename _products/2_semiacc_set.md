@@ -1,11 +1,11 @@
 ---
 layout: product
 title: Semi-ACC Set
-description: 
-- Full Range ACC
-    - Traffic Jam Low Speed Follow
-    - Traffic Jam Stop & Go
-- Full Range Active LKC
+description: "
+    <ul><span> Speed Controlled by Accelerator </span></ul>
+    <ul><span> No Auto-Braking Feature </span></ul>
+    <ul><span> Full Range LKC </span></ul>
+"
 
 comments: KommuActuator is used to provide controls to the car, as the car does not have a accessible controls point.
 includes: 

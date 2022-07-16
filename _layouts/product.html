@@ -8,8 +8,9 @@ stylesheet: products
     </a>
 </div> -->
 <div class="row">
+    <link href="{{ "/css/products-page.css" | relative_url }}" rel="stylesheet">
     <div class="col-lg-6 col-md-12 col-12 mb-4">
-        <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" class = "img-fluid w-100" id= "MainImage"  style="border-radius: 5%; margin-bottom: 10px;">
+        <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" class = "img-fluid w-100" id= "MainImage"  style="margin-bottom: 10px;">
         <div class="small-img-group" >
             <div class="small-img-col">
                 <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" width="100%" class="small-img" style="border-style: solid; border-color: #33B9FF; border-width: 5px;" >
@@ -36,24 +37,24 @@ stylesheet: products
 
         <div>
             <h3>Select your car model:</h3>
-            <select aria-label="Select your car model" class="form-select mb-1" id="localizer">
+            <select aria-label="Select your car model" class="form-select mb-4 mt-2" id="car-select">
             </select>
-            <br>
-
-            <button class="btn btn-tertiary" id="localizerer">Buy Now</button>
+            <div class="col" id="buyButtonDiv">
+                <button class="btn btn-tertiary" id="buy-btn">Buy Now</button>
+            </div>
         </div>
         <div>
-        <br><br>
-        
+            <br><br>
             <h4>What's in the Box?</h4>
             <div id="includes"></div>
+            <br><br>
         </div>
     </div>
 </div>
 
 <script>
-    const localizer = document.getElementById("localizer");
-    const localizerer = document.getElementById("localizerer");
+    const carSelectList = document.getElementById("car-select");
+    const buyButton = document.getElementById("buy-btn");
 
     async function load() {
         const selectedCar = new URLSearchParams(window.location.search).get("car");
@@ -75,15 +76,15 @@ stylesheet: products
             option.value = `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`;
             option.innerText = option.value;
             option.selected = (selectedCar === option.value);
-            localizer.appendChild(option);
+            carSelectList.appendChild(option);
         });
     }
 
     window.onload = load;
 
-    localizerer.onclick = () => {
+    buyButton.onclick = () => {
         const params = new URLSearchParams();
-        params.append("text", `Hey, I am interested in the {{ page.title }} for ${localizer.value}`);
+        params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
 
         const url = "https://wa.me/60149676780?" + params.toString();
         window.open(url, "_blank");

@@ -4,9 +4,10 @@ title: Products | kommu.ai
 stylesheet: products
 ---
 <div class="container" id="productlocationizer">
+    <link href="{{ "/css/products-page.css" | relative_url }}" rel="stylesheet">
     <h3 style = "text-align: center;">Find the right model for your car:</h3><br>
     <div class="row align-items-center">
-        <div class="col-lg-7 col-md-12 mb-4">
+        <div class="col-lg-7 col-md-12 mb-4 text-center">
             <select aria-label="Select your car model" class="form-select" id="localizer">
             </select>
         </div>
@@ -17,22 +18,23 @@ stylesheet: products
     <h3 class="mt-4 mb-4 text-center">Products</h3>
         <div class="products">
             {% for product in site.products %}
-            <div class="col md-6 sm-12">
-                <div class="card m-1" style="width: 18rem;">
+            <div class="col md-6 sm-12 px-2">
+                <div class="card m-1" style="width: 19rem;">
                     <a href="{{ product.url | relative_url }}"><img src="{{ "" | relative_url }}/img/{{ product.img }}-1.jpg" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;"></a>
                     
-                    <div class="card-body" style="height: 13rem">
+                    <div class="card-body" style="height: 15rem">
                         <div>
                             <a href="{{ product.url | relative_url }}"><h5 class="card-title">{{ product.title }}</h5></a>
                         </div>
                         
-                        <p class="card-text">{{ product.description }}</p>
-                        <div style="text-align: center;">
+                        <div class="card-text">{{ product.description }}</div>
+                        <div style="text-align: center; margin-top:10px">
                             <a href="{{ product.url | relative_url }}" class="btn btn-tertiary">View</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <br><br>
             {% endfor %}
         </div>
 </div>
