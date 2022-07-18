@@ -12,11 +12,43 @@ description: "
 </ul>
 "
 
-comments: This set supports mostly newer cars, and most cars supported by the set unlocks full-range ACC & LKAS, while Stop-N-Go implementation is still in development. 
+comments: "
+<h3>Active features&#58;</h3>
+<ol class=\u0022ordered-list\u0022>
+    <li class=\u0022ordered-list-first\u0022>Adaptive Cruise Control</li>
+    <ol type=\u0022a\u0022>
+        <li class=\u0022ordered-list-second\u0022>Traffic Jam Low Speed Follow** (Brake Down to 0km/h)</li>
+        <li class=\u0022ordered-list-second\u0022>Traffic Jam Stop & Go** (Auto departure in standstill traffic & hold brakes at 0km/h)</li>
+    </ol>
+    <br>
+    <li class=\u0022ordered-list-first\u0022>Active Lane Keep Control</li>
+    <ol type=\u0022a\u0022>
+        <li class=\u0022ordered-list-second\u0022>
+        Highway Cornering (actively tilt steering up to 30 - 90 degrees**)
+        </li>
+    </ol>
+</ol>
+
+<br>
+
+<h3>Passive features&#58;</h3>
+<ol class=\u0022ordered-list\u0022>
+    <li class=\u0022ordered-list-first\u0022>Pre-collision Warning</li>
+    <li class=\u0022ordered-list-first\u0022>Lane Departure Warning</li>
+</ol>
+
+<p class=\u0022product-disclaimer\u0022>** Availability depends on vehicle model, refer to supported car list
+on website.</p>
+"
+
 includes: 
- - 1 x Kommu Vision 
- - 1 x KommuSafety
- - 1 x KommuPower
+ - KommuVision 
+ - KommuSafety (Relay)
+ - KommuPower
+ - Vision Mount
+ - Relay Harness
+ - Long USB C-C 3.1 Cable
+ - Short USB C-C 3.1 cable
 img: standard
 price: RM 3,499
 key: standard

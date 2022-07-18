@@ -1,56 +1,78 @@
 .table{
-    table-layout: auto;
+    table-layout: fixed;
+    width: 950px;
+    border: 1px solid black;
+    vertical-align: middle;
+
 }
 
-@media(max-width:700px) {
-    .table{
-        table-layout: fixed;
-        width: 800px;
-    }
-
-    #header-table-1 :nth-child(1){
-        width: 150px;
-    }
-    #header-table-1 :nth-child(2){
-        width: 150px;
-    }
-    #header-table-1 :nth-child(3){
-        width: 150px;
-    }
-
-    #header-table-1 :nth-child(4){
-        width: 150px;
-    }
-
-    #header-table-1 :nth-child(5){
-        width: 100px;
-    }
-
-    #header-table-1 :nth-child(6){
-        width: 100px;
-    }
-
-    #header-table-2 :nth-child(1){
-        width: 150px;
-    }
-    #header-table-2 :nth-child(2){
-        width: 150px;
-    }
-    #header-table-2 :nth-child(3){
-        width: 150px;
-    }
-
-    #header-table-2 :nth-child(4){
-        width: 200px;
-    }
-
-    
-    #header-table-2 :nth-child(5){
-        width: 150px;
-    }
-}
 
 .div-table{
-    overflow:scroll;
+    justify-content: center;
+    display: flex;
+    overflow:hidden;
 }
 
+td {
+    font-weight: 500;
+    border: 0.5px solid black;
+    padding:0px
+}
+
+th {
+    border: 0.5px solid black;
+    vertical-align: middle;
+}
+
+#header-table-1 :nth-child(1){
+    width: 125px;
+}
+#header-table-1 :nth-child(2){
+    width: 125px;
+}
+#header-table-1 :nth-child(3){
+    width: 125px;
+}
+
+#header-table-1 :nth-child(4){
+    width: 125px;
+}
+
+#header-table-1 :nth-child(5){
+    width: 175px;
+}
+
+#header-table-1 :nth-child(6){
+    width: 100px;
+}
+
+#header-table-2 :nth-child(1){
+    width: 150px;
+}
+#header-table-2 :nth-child(2){
+    width: 150px;
+}
+#header-table-2 :nth-child(3){
+    width: 150px;
+}
+
+#header-table-2 :nth-child(4){
+    width: 150px;
+}
+
+#header-table-2 :nth-child(5){
+    width: 150px;
+}
+
+@media (max-width: 991px) {
+    .div-table{
+        display: block;
+    }
+}
+
+@media (max-width: 1100px) {
+    .div-table{
+        display: block;
+        overflow:scroll;
+    }
+}
