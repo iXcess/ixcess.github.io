@@ -1,6 +1,28 @@
 <!-- Footer -->
 <footer  class="footer mt-auto text-center bg-black">
-    <div class="container">
+    <link href="{{ "/css/footer.css" | relative_url }}" rel="stylesheet">
+    <div class="container ">
+        <div class="row d-flex justify-content-center" style="color: white;">
+            <div class="main-btm-description col-md mt-4">
+                    <h2 class = "non-bold" >Contact us at </h2>
+                    <a class= "footer-inline-link" href = "mailto:support@kommu.ai">support@kommu.ai</a>
+                <div class = "footer-buttons mt-3">
+                    <a href = "{{ "/faq" | relative_url }}">FAQ</a>
+                </div>
+                <div class = "footer-buttons mt-3">
+                    <a href = "{{ "/terms" | relative_url }}">Terms & Conditions</a>
+                </div>
+                <div class = "footer-buttons mt-3">
+                    <a href = "{{ "/privacy" | relative_url }}">Privacy Policy</a>
+                </div>
+                
+            </div>
+            <div class="main-btm-description col-md mt-4">
+                <h2>About Kommu</h2>  
+                <br><br>
+                <p>With the <span style="font-weight:900">community</span> approach, we solve the way we <span style="font-weight:900">commute</span> with vehicular <span style="font-weight:900">communication</span>.</p>
+            </div>
+        </div>
         <div class="row d-flex" >
             <div class="main-btm-img col-12 d-flex justify-content-center" style = "margin-bottom: 25px;">
                 <a href = "https://www.facebook.com/kommu.official/" target="_blank"> <i class="fab fa-facebook fa-2xl"></i></a>
