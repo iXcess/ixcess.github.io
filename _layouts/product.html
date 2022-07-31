@@ -10,38 +10,44 @@ stylesheet: products
 <div class="row">
     <link href="{{ "/css/products-page.css" | relative_url }}" rel="stylesheet">
     <div class="col-lg-6 col-md-12 col-12 mb-4">
-        <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" class = "img-fluid w-100" id= "MainImage"  style="margin-bottom: 10px;">
+        <img src="{{ "" | relative_url }}/img/products/{{page.key}}/1.png" class = "img-fluid w-100" id= "MainImage"  style="margin-bottom: 10px;">
         <div class="small-img-group" >
             <div class="small-img-col">
-                <img src="{{ "" | relative_url }}/img/{{ page.img }}-1.jpg" width="100%" class="small-img" style="border-style: solid; border-color: #33B9FF; border-width: 5px;" >
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/1.png" width="100%" class="small-img" style="border-style: solid; border-color: #33B9FF; border-width: 5px;" >
             </div>
             <div class="small-img-col">
-                <img src="{{ "" | relative_url }}/img/{{ page.img }}-2.jpg" width="100%" class="small-img">
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/2.png" width="100%" class="small-img">
             </div>
             <div class="small-img-col">
-                <img src="{{ "" | relative_url }}/img/{{ page.img }}-3.jpg" width="100%" class="small-img">
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/3.png" width="100%" class="small-img">
             </div>
             <div class="small-img-col">
-                <img src="{{ "" | relative_url }}/img/{{ page.img }}-4.jpg" width="100%" class="small-img">
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/4.png" width="100%" class="small-img">
             </div>
             <div class="small-img-col">
-                <img src="{{ "" | relative_url }}/img/{{ page.img }}-5.jpg" width="100%" class="small-img">
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/5.png" width="100%" class="small-img">
             </div>
         </div>
     </div>
     <div class="col">
-        <h2>{{ page.title }}</h2>
-        <p>{{ page.comments }}</p>
-        <h2>{{ page.price }}</h2>
+        <h1>{{ page.product_name }}</h1>
+        <br>
+        <h4>{{ page.price }}</h4>
 
         <div>
             <h3>Select your car model:</h3>
-            <select aria-label="Select your car model" class="form-select mb-4 mt-2" id="car-select">
-            </select>
-            <div class="col" id="buyButtonDiv">
-                <button class="btn btn-tertiary" id="buy-btn">Buy Now</button>
+            <div class="row">
+                <div class="col-xl-6 col-lg-12" style="max-width:350px;">
+                    <select aria-label="Select your car model" class="form-select mb-4 mt-2" id="car-select">
+                    </select>
+                </div>
+                <div class="col-xl-6 col-lg-12" id="buyButtonDiv" style="text-align: left;">
+                    <button class="btn btn-tertiary" id="buy-btn">Buy Now</button>
+                </div>
             </div>
         </div>
+        <br>
+        <p>{{ page.comments }}</p>
         <div>
             <br><br>
             <h4>What's in the Box?</h4>
@@ -82,10 +88,12 @@ stylesheet: products
     window.onload = load;
 
     buyButton.onclick = () => {
-        const params = new URLSearchParams();
-        params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
+        // const params = new URLSearchParams();
+        // params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
 
-        const url = "https://wa.me/60149676780?" + params.toString();
+        // const url = "https://wa.me/60149676780?" + params.toString();
+
+        const url = "{{page.purchase_link}}";
         window.open(url, "_blank");
     };
 

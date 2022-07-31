@@ -15,12 +15,12 @@ stylesheet: products
             <button class="btn btn-tertiary" id="localizerer">Search</button>
         </div>
     </div>
-    <h3 class="mt-4 mb-4 text-center">Products</h3>
+    <h1 class="mt-4 mb-4 text-center">Products</h1>
         <div class="products">
             {% for product in site.products %}
-            <div class="col md-6 sm-12 px-2">
+            <div class="col md-6 sm-12 px-2" style="margin: 20px;">
                 <div class="card m-1" style="width: 19rem;">
-                    <a href="{{ product.url | relative_url }}"><img src="{{ "" | relative_url }}/img/{{ product.img }}-1.jpg" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;"></a>
+                    <a href="{{ product.url | relative_url }}"><img src="{{ "" | relative_url }}/img/products/{{product.key}}/1.png" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;"></a>
                     
                     <div class="card-body" style="height: 15rem">
                         <div>

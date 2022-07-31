@@ -1,6 +1,7 @@
 ---
 layout: product
 title: Standard Set
+product_name: KommuAssist Standard Set
 description: "
 <ul>
     <span>Full Range ACC </span>
@@ -43,7 +44,7 @@ on website.</p>
 
 includes: 
  - KommuVision 
- - KommuSafety (Relay)
+ - KommuRelay
  - KommuPower
  - Vision Mount
  - Relay Harness
@@ -52,4 +53,5 @@ includes:
 img: standard
 price: RM 3,499
 key: standard
+purchase_link: https://buy.stripe.com/5kAeXtezc2hs4jC000
 ---

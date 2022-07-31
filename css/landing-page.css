@@ -98,7 +98,18 @@
 #vehicle-support {
     background: black;
     color:white;
-    margin: 150px 0px 0px 0px;
+    margin: 0px;
+    border-style: none none solid none;
+    border-color: white;
+    border-width: 0.5px;
+    padding-bottom: 50px;
+}
+
+#featured-container {
+    background-color: #d7d7d7;
+    border-style: none none solid none;
+    border-width: 10px;
+    border-color:white;
 }
 
 .navbar-dark .navbar-nav .nav-link{
@@ -174,14 +185,21 @@ h6 {
 
 .main-description > h1{
     padding: 30px 0px;
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 
 .main-description > p{
-    font-size: 20px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 300;
     text-align: center;
+}
+
+.main-featured {
+    text-align: center;
+    padding: 0px 20px;
+    margin: 25px 0px;
+
 }
 
 .main-btm-container {
@@ -202,13 +220,13 @@ h6 {
 
 .main-btm-description > h2{
     padding: 30px 0px;
-    font-size: 30px;
+    font-size: 1.875rem;
     display: inline;
 }
 
 .footer-inline-link {
     font-size: 27px;
-    font-weight: 750;
+    font-weight: 800;
     text-decoration: underline; 
     color: white;
 }
@@ -221,8 +239,8 @@ h6 {
 }
 
 .footer-buttons > a {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 300;
     text-decoration: none; 
     color: white;
     margin: 25px 0px;
@@ -236,7 +254,7 @@ h6 {
 }
 
 .main-btm-description > p{
-    font-size: 20px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 300;
  
@@ -470,7 +488,7 @@ p.copyright {
     
 
 .non-bold {
-    font-weight: 500;
+    font-weight: 300;
 }
 
 
@@ -478,7 +496,23 @@ p.copyright {
 
 .about-paragraph {
 
-    font-size: 24px;
+    font-size: 1.25rem;
     text-align:center;
-    font-weight: 500;
+    font-weight: 300;
+}
+
+.about-paragraph > a {
+    color: black;
+    text-decoration: underline;
+}
+
+.about-paragraph > a:link {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.about-paragraph > a:hover {
+    color: black;
+    text-decoration: underline;
 }

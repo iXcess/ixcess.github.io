@@ -1,6 +1,7 @@
 ---
 layout: product
 title: Semi-ACC Set
+product_name: KommuAssist Semi-ACC Set
 description: "
     <ul><span> Speed Controlled by Accelerator </span></ul>
     <ul><span> No Auto-Braking Feature </span></ul>
@@ -37,7 +38,7 @@ on website.</p>
 
 includes: 
  - KommuVision 
- - KommuSafety (Relay)
+ - KommuRelay)
  - KommuPower
  - KommuActuator
  - Vision Mount
@@ -48,4 +49,6 @@ includes:
 price: RM 3,599
 img: compatible
 key: semi_acc
+
+purchase_link: https://buy.stripe.com/aEU16Dcr409k2bu5kl
 ---
