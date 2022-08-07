@@ -13,7 +13,7 @@ comments: "
 <ol class=\u0022ordered-list\u0022>
     <li class=\u0022ordered-list-first\u0022>Adaptive Cruise Control</li>
     <ol type=\u0022a\u0022>
-        <li class=\u0022ordered-list-second\u0022>Highway Cruising (Speed Controlled by Accelerator)</li>
+        <li class=\u0022ordered-list-second\u0022>Highway Cruising (with no auto-braking; system will stop accelerating when lead car is detected but cannot control brakes)</li>
     </ol>
     <br>
     <li class=\u0022ordered-list-first\u0022>Active Lane Keep Control</li>
@@ -38,7 +38,6 @@ on website.</p>
 
 includes: 
  - KommuVision 
- - KommuRelay)
  - KommuPower
  - KommuActuator
  - Vision Mount

@@ -20,15 +20,15 @@ stylesheet: products
             {% for product in site.products %}
             <div class="col md-6 sm-12 px-2" style="margin: 20px;">
                 <div class="card m-1" style="width: 19rem;">
-                    <a href="{{ product.url | relative_url }}"><img src="{{ "" | relative_url }}/img/products/{{product.key}}/1.png" class="card-img-top" alt="Image of {{ product.title }}" style="height: 11rem;"></a>
+                    <a href="{{ product.url | relative_url }}"><img src="{{ "" | relative_url }}/img/products/{{product.key}}/1.png" class="card-img-top" alt="Image of {{ product.title }}" style="height: 12.5rem;"></a>
                     
-                    <div class="card-body" style="height: 15rem">
+                    <div class="card-body" style="height: 16rem">
                         <div>
                             <a href="{{ product.url | relative_url }}"><h5 class="card-title">{{ product.title }}</h5></a>
                         </div>
                         
                         <div class="card-text">{{ product.description }}</div>
-                        <div style="text-align: center; margin-top:10px">
+                        <div style="text-align: center; margin-top:20px">
                             <a href="{{ product.url | relative_url }}" class="btn btn-tertiary" style="position:absolute;bottom:20px;right:80px;">View</a>
                         </div>
                     </div>

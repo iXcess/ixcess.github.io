@@ -18,8 +18,8 @@ comments: "
 <ol class=\u0022ordered-list\u0022>
     <li class=\u0022ordered-list-first\u0022>Adaptive Cruise Control</li>
     <ol type=\u0022a\u0022>
-        <li class=\u0022ordered-list-second\u0022>Traffic Jam Low Speed Follow** (Brake Down to 0km/h)</li>
-        <li class=\u0022ordered-list-second\u0022>Traffic Jam Stop & Go** (Auto departure in standstill traffic & hold brakes at 0km/h)</li>
+        <li class=\u0022ordered-list-second\u0022>Traffic Jam Low Speed Follow** (brake down to 0km/h)</li>
+        <li class=\u0022ordered-list-second\u0022>Traffic Jam Stop & Go** (auto departure in standstill traffic & hold brakes at 0km/h)</li>
     </ol>
     <br>
     <li class=\u0022ordered-list-first\u0022>Active Lane Keep Control</li>

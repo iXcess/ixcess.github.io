@@ -11,7 +11,7 @@ stylesheet: products
     <link href="{{ "/css/products-page.css" | relative_url }}" rel="stylesheet">
     <div class="col-lg-6 col-md-12 col-12 mb-4">
         <img src="{{ "" | relative_url }}/img/products/{{page.key}}/1.png" class = "img-fluid w-100" id= "MainImage"  style="margin-bottom: 10px;">
-        <div class="small-img-group" >
+        <div class="small-img-group" style="margin-bottom: 10px;">
             <div class="small-img-col">
                 <img src="{{ "" | relative_url }}/img/products/{{page.key}}/1.png" width="100%" class="small-img" style="border-style: solid; border-color: #33B9FF; border-width: 5px;" >
             </div>
@@ -24,9 +24,34 @@ stylesheet: products
             <div class="small-img-col">
                 <img src="{{ "" | relative_url }}/img/products/{{page.key}}/4.png" width="100%" class="small-img">
             </div>
+        </div>
+        <div class="small-img-group" >
             <div class="small-img-col">
                 <img src="{{ "" | relative_url }}/img/products/{{page.key}}/5.png" width="100%" class="small-img">
             </div>
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/6.png" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/7.png" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ "" | relative_url }}/img/products/{{page.key}}/8.png" width="100%" class="small-img">
+            </div>
+        </div>
+        <br>
+            <h4>
+                Installation:
+            </h4>
+            <br>
+            <h4>
+                Perform 15 minutes self-installation following our video guide: 
+            </h4>
+            <br>
+            <iframe id="installationyoutube" src="https://www.youtube.com/embed/0DLlI9zXH9U">
+            </iframe>
+        <div>
+
         </div>
     </div>
     <div class="col">
@@ -51,7 +76,8 @@ stylesheet: products
         <div>
             <br><br>
             <h4>What's in the Box?</h4>
-            <div id="includes"></div>
+            <div class="container" ></div>
+            <div class="row" id="includes"></div>
             <br><br>
         </div>
     </div>
@@ -105,31 +131,63 @@ stylesheet: products
             {% endfor %} ];
 
     const includesDiv = document.getElementById("includes");
-
-    for (const include of includes) {
-        const feature = document.createElement("div");
-        const bullets = document.createElement("ul");
+    const col1 = document.createElement("div");
+    for (const include of includes) {  
+        
+        col1.classList.add("col-md-6");
+        col1.classList.add("col-sm-12");
         console.log(include)
-        bullets.textContent = include.desc ;
-        bullets.style = "list-style-type:disc";
-        feature.appendChild(bullets);
-        includesDiv.appendChild(feature);
+        if  (includes.indexOf(include) <= 3 ) {
+            const feature1 = document.createElement("div");
+            const bullets1 = document.createElement("ul");
+            feature1.classList.add("row")
+
+            bullets1.textContent = include.desc ;
+            bullets1.style = "list-style-type:disc";
+            col1.appendChild(feature1)
+            feature1.appendChild(bullets1);
+          
+        }
+        
     }
+    includesDiv.appendChild(col1);
+
+    const col2 = document.createElement("div");
+    for (const include of includes) {
+        
+        col2.classList.add("col-sm-6");
+        col2.classList.add("col-xs-12");
+        if  (includes.indexOf(include) >= 3 ) {
+            const feature2 = document.createElement("div");
+            const bullets2 = document.createElement("ul");
+            feature2.classList.add("row")
+
+            bullets2.textContent = include.desc ;
+            bullets2.style = "list-style-type:disc";
+            col2.appendChild(feature2)
+            feature2.appendChild(bullets2);
+           
+        }
+    }
+    includesDiv.appendChild(col2);
 
 var mainImg = document.getElementById('MainImage');
 var smallImg = document.getElementsByClassName('small-img');
-
 
 // Disgusting codes. will refactor if i feel like it.
 smallImg[0].onclick = function(){
     mainImg.src = smallImg[0].src;
     
-
+    smallImg[0].style.border = "5px solid #33B9FF";
     smallImg[1].style.border = "0px";
     smallImg[2].style.border = "0px";
     smallImg[3].style.border = "0px";
     smallImg[4].style.border = "0px";
-    smallImg[0].style.border = "5px solid #33B9FF";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "0px";
+
 }
 
 smallImg[1].onclick = function(){
@@ -140,6 +198,10 @@ smallImg[1].onclick = function(){
     smallImg[2].style.border = "0px";
     smallImg[3].style.border = "0px";
     smallImg[4].style.border = "0px";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "0px";
 }
 smallImg[2].onclick = function(){
     mainImg.src = smallImg[2].src;
@@ -149,6 +211,10 @@ smallImg[2].onclick = function(){
     smallImg[2].style.border = "5px solid #33B9FF";
     smallImg[3].style.border = "0px";
     smallImg[4].style.border = "0px";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "0px";
 }
 smallImg[3].onclick = function(){
     mainImg.src = smallImg[3].src;
@@ -158,6 +224,10 @@ smallImg[3].onclick = function(){
     smallImg[2].style.border = "0px";
     smallImg[3].style.border = "5px solid #33B9FF";
     smallImg[4].style.border = "0px";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "0px";
 }
 smallImg[4].onclick = function(){
     mainImg.src = smallImg[4].src;
@@ -167,6 +237,66 @@ smallImg[4].onclick = function(){
     smallImg[2].style.border = "0px";
     smallImg[3].style.border = "0px";
     smallImg[4].style.border = "5px solid #33B9FF";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "0px";
 }
+smallImg[5].onclick = function(){
+    mainImg.src = smallImg[5].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "0px";
+    smallImg[5].style.border = "5px solid #33B9FF";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "0px";
+}
+
+smallImg[6].onclick = function(){
+    mainImg.src = smallImg[6].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "0px";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "5px solid #33B9FF";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "0px";
+}
+
+smallImg[7].onclick = function(){
+    mainImg.src = smallImg[7].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "0px";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "5px solid #33B9FF";
+    smallImg[8].style.border = "0px";
+}
+
+smallImg[8].onclick = function(){
+    mainImg.src = smallImg[8].src;
+
+    smallImg[0].style.border = "0px";
+    smallImg[1].style.border = "0px";
+    smallImg[2].style.border = "0px";
+    smallImg[3].style.border = "0px";
+    smallImg[4].style.border = "0px";
+    smallImg[5].style.border = "0px";
+    smallImg[6].style.border = "0px";
+    smallImg[7].style.border = "0px";
+    smallImg[8].style.border = "5px solid #33B9FF";
+}
+
 
 </script>
