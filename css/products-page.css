@@ -111,6 +111,12 @@ a:active { text-decoration: none; }
     padding: 5px 0px;
 }
 
+#installationyoutube {
+    width:calc(100vw/2.25); 
+    height: calc(100vw/2.25*(9/16)); 
+    border-radius: 25px;
+}
+
 @media (max-width: 991px) {
     #main-content {
         width: 90vw;
@@ -129,5 +135,12 @@ a:active { text-decoration: none; }
     #buyButtonDiv{
         text-align: center;
     }
+
+    #installationyoutube {
+        width:calc(100vw*0.75); 
+        height: calc(100vw*0.75*9/16); 
+        border-radius: 25px;
+    }
     
 }
+

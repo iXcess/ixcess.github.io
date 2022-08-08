@@ -48,9 +48,11 @@ stylesheet: products
                 Perform 15 minutes self-installation following our video guide: 
             </h4>
             <br>
-            <iframe id="installationyoutube" src="https://www.youtube.com/embed/0DLlI9zXH9U">
-            </iframe>
-        <div>
+            <div style="text-align: center;">
+                <iframe id="installationyoutube" src="https://www.youtube.com/embed/ChIh7TIrvqg">
+                </iframe>    
+            </div>
+           <div>
 
         </div>
     </div>
@@ -76,8 +78,9 @@ stylesheet: products
         <div>
             <br><br>
             <h4>What's in the Box?</h4>
-            <div class="container" ></div>
+            <div class="container">
             <div class="row" id="includes"></div>
+            </div>
             <br><br>
         </div>
     </div>
@@ -136,6 +139,7 @@ stylesheet: products
         
         col1.classList.add("col-md-6");
         col1.classList.add("col-sm-12");
+
         console.log(include)
         if  (includes.indexOf(include) <= 3 ) {
             const feature1 = document.createElement("div");
