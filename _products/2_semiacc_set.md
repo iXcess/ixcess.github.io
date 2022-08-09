@@ -9,7 +9,7 @@ description: "
 "
 
 comments: "
-<h3>Active features&#58;</h3>
+<h4>Active features&#58;</h4>
 <ol class=\u0022ordered-list\u0022>
     <li class=\u0022ordered-list-first\u0022>Semi Adaptive Cruise Control</li>
     <ol type=\u0022a\u0022>
@@ -26,7 +26,7 @@ comments: "
 
 <br>
 
-<h3>Passive features&#58;</h3>
+<h4>Passive features&#58;</h4>
 <ol class=\u0022ordered-list\u0022>
     <li class=\u0022ordered-list-first\u0022>Pre-collision Warning</li>
     <li class=\u0022ordered-list-first\u0022>Lane Departure Warning</li>
