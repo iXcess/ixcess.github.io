@@ -53,5 +53,5 @@ includes:
 img: standard
 price: RM 3,499
 key: standard
-purchase_link: https://buy.stripe.com/5kAeXtezc2hs4jC000
+product_id: price_1LQTmVCeqLEWrvVKiWU41V6P
 ---

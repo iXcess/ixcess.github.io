@@ -49,5 +49,5 @@ price: RM 3,599
 img: compatible
 key: semi_acc
 
-purchase_link: https://buy.stripe.com/aEU16Dcr409k2bu5kl
+product_id: price_1LQTotCeqLEWrvVKs1Ai4YHr
 ---

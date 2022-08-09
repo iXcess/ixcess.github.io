@@ -116,12 +116,11 @@ stylesheet: products
     window.onload = load;
 
     buyButton.onclick = () => {
-        // const params = new URLSearchParams();
-        // params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
+        const params = new URLSearchParams();
+        params.append("car", carSelectList.value);
+        params.append("price", "{{ page.product_id }}");
 
-        // const url = "https://wa.me/60149676780?" + params.toString();
-
-        const url = "{{page.purchase_link}}";
+        const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
     };
 
