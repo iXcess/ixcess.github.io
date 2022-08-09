@@ -11,7 +11,7 @@ description: "
 comments: "
 <h3>Active features&#58;</h3>
 <ol class=\u0022ordered-list\u0022>
-    <li class=\u0022ordered-list-first\u0022>Adaptive Cruise Control</li>
+    <li class=\u0022ordered-list-first\u0022>Semi Adaptive Cruise Control</li>
     <ol type=\u0022a\u0022>
         <li class=\u0022ordered-list-second\u0022>Highway Cruising (with no auto-braking; system will stop accelerating when lead car is detected but cannot control brakes)</li>
     </ol>
@@ -41,7 +41,7 @@ includes:
  - KommuPower
  - KommuActuator
  - Vision Mount
- - Relay Harness
+ - Actuator Harness
  - Long USB C-C 3.1 Cable
  - Short USB C-C 3.1 cable
 
