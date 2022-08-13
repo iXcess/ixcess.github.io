@@ -111,11 +111,29 @@ a:active { text-decoration: none; }
     padding: 5px 0px;
 }
 
-#installationyoutube {
+
+.installationyoutube {
     width:calc(100vw/2.25); 
     height: calc(100vw/2.25*(9/16)); 
     border-radius: 25px;
 }
+
+#installation-div-pc{
+    display:block
+}
+
+#installation-div-mobile{
+    display:none
+}
+
+#product-div-pc {
+    display:block
+}
+
+#product-div-mobile {
+    display:none
+}
+
 
 @media (max-width: 991px) {
     #main-content {
@@ -128,19 +146,33 @@ a:active { text-decoration: none; }
         display: inline;
     }
 
-    #buy-btn {
+    .buy-btn {
         display: inline;
     }
 
-    #buyButtonDiv{
+    .buyButtonDiv{
         text-align: center;
     }
 
-    #installationyoutube {
+    .installationyoutube {
         width:calc(100vw*0.75); 
         height: calc(100vw*0.75*9/16); 
         border-radius: 25px;
     }
-    
-}
 
+    #installation-div-pc{
+        display:none
+    }
+
+    #installation-div-mobile{
+        display:block
+    }
+    
+    #product-div-pc {
+        display:none
+    }
+    
+    #product-div-mobile {
+        display:block
+    }
+}

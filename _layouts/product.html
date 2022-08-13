@@ -10,6 +10,25 @@ stylesheet: products
 <div class="row">
     <link href="{{ "/css/products-page.css" | relative_url }}" rel="stylesheet">
     <div class="col-lg-6 col-md-12 col-12 mb-4">
+        <div id="product-div-mobile" style="margin-top:20px">
+            <h1>{{ page.product_name }}</h1>
+            <br>
+            <h4>{{ page.price }}</h4>
+    
+            <div>
+                <h3>Select your car model:</h3>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12" style="max-width:350px;">
+                        <select aria-label="Select your car model" class="form-select mb-4 mt-2 car-select">
+                        </select>
+                    </div>
+                    <div class="col-xl-6 col-lg-12 buyButtonDiv" style="text-align: left;">
+                        <button class="btn btn-tertiary buy-btn" style="margin-bottom: 30px;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <img src="{{ "" | relative_url }}/img/products/{{page.key}}/1.png" class = "img-fluid w-100" id= "MainImage"  style="margin-bottom: 10px;">
         <div class="small-img-group" style="margin-bottom: 10px;">
             <div class="small-img-col">
@@ -40,60 +59,79 @@ stylesheet: products
             </div>
         </div>
         <br>
+        <div id="installation-div-pc">
             <h4>
                 Installation:
             </h4>
-            <h4 style="font-size:1rem; font-weight:300">
+            <br>
+            <h4>
                 Perform 15 minutes self-installation following our video guide: 
             </h4>
             <br>
             <div style="text-align: center;">
-                <iframe id="installationyoutube" src="https://www.youtube.com/embed/ChIh7TIrvqg">
+                <iframe class="installationyoutube" src="https://www.youtube.com/embed/ChIh7TIrvqg">
                 </iframe>    
             </div>
-           <div>
-
         </div>
     </div>
     <div class="col">
-        <h1>{{ page.product_name }}</h1>
-        <br>
-        <h4 style="font-weight:300">{{ page.price }}</h4>
-
-        <div>
-            <h4>Select your car model:</h4>
-            <div class="row">
-                <div class="col-xl-6 col-lg-12" style="max-width:350px;">
-                    <select aria-label="Select your car model" class="form-select mb-4 mt-2" id="car-select">
-                    </select>
-                </div>
-                <div class="col-xl-6 col-lg-12" id="buyButtonDiv" style="text-align: left;">
-                    <button class="btn btn-tertiary" id="buy-btn">Buy</button>
+        <div id="product-div-pc">
+            <h1>{{ page.product_name }}</h1>
+            <br>
+            <h4>{{ page.price }}</h4>
+    
+            <div>
+                <h3>Select your car model:</h3>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12" style="max-width:350px;">
+                        <select aria-label="Select your car model" class="form-select mb-4 mt-2 car-select">
+                        </select>
+                    </div>
+                    <div class="col-xl-6 col-lg-12 buyButtonDiv" style="text-align: left;">
+                        <button class="btn btn-tertiary buy-btn">Buy Now</button>
+                    </div>
                 </div>
             </div>
         </div>
+
         <br>
         <p>{{ page.comments }}</p>
         <div>
             <br><br>
-            <h4>What's in the box?</h4>
+            <h4>What's in the Box?</h4>
             <div class="container">
             <div class="row" id="includes"></div>
             </div>
             <br><br>
         </div>
+        <div id="installation-div-mobile">
+            <h4>
+                Installation:
+            </h4>
+            <br>
+            <h4>
+                Perform 15 minutes self-installation following our video guide: 
+            </h4>
+            <br>
+            <div style="text-align: center;">
+                <iframe class="installationyoutube" src="https://www.youtube.com/embed/ChIh7TIrvqg">
+                </iframe>    
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-    const carSelectList = document.getElementById("car-select");
-    const buyButton = document.getElementById("buy-btn");
-
+    const carSelectList = document.getElementsByClassName("car-select");
+    const buyButton = document.getElementsByClassName("buy-btn");
+    
+    console.log(carSelectList[1])
     async function load() {
         const selectedCar = new URLSearchParams(window.location.search).get("car");
         const remote = "https://raw.githubusercontent.com/kommuai/bukapilot/snapshot/selfdrive/car/supported_vehicle.json";
         const resp = await (await fetch(remote)).json();
-
+        
+        
         let list = [];
         switch ("{{ page.key }}") {
         case "standard":
@@ -105,22 +143,41 @@ stylesheet: products
         };
 
         list.forEach((vehicle) => {
-            const option = document.createElement("option");
-            option.value = `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`;
-            option.innerText = option.value;
-            option.selected = (selectedCar === option.value);
-            carSelectList.appendChild(option);
+            const option1 = document.createElement("option");
+            const option2 = document.createElement("option");
+
+            option1.value = `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`;
+            option1.innerText = option1.value;
+            option1.selected = (selectedCar === option1.value);
+
+            option2.value = `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`;
+            option2.innerText = option2.value;
+            option2.selected = (selectedCar === option2.value);
+
+            carSelectList[0].appendChild(option1);
+            carSelectList[1].appendChild(option2);
         });
     }
 
     window.onload = load;
 
-    buyButton.onclick = () => {
-        const params = new URLSearchParams();
-        params.append("car", carSelectList.value);
-        params.append("price", "{{ page.product_id }}");
+    buyButton[0].onclick = () => {
+        // const params = new URLSearchParams();
+        // params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
 
-        const url = "https://api.kommu.ai/payment/begin?" + params.toString();
+        // const url = "https://wa.me/60149676780?" + params.toString();
+
+        const url = "{{page.purchase_link}}";
+        window.open(url, "_blank");
+    };
+
+    buyButton[1].onclick = () => {
+        // const params = new URLSearchParams();
+        // params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
+
+        // const url = "https://wa.me/60149676780?" + params.toString();
+
+        const url = "{{page.purchase_link}}";
         window.open(url, "_blank");
     };
 
@@ -159,7 +216,7 @@ stylesheet: products
         
         col2.classList.add("col-sm-6");
         col2.classList.add("col-xs-12");
-        if  (includes.indexOf(include) > 3 ) {
+        if  (includes.indexOf(include) >= 3 ) {
             const feature2 = document.createElement("div");
             const bullets2 = document.createElement("ul");
             feature2.classList.add("row")
