@@ -13,17 +13,17 @@ stylesheet: products
         <div id="product-div-mobile" style="margin-top:20px">
             <h1>{{ page.product_name }}</h1>
             <br>
-            <h4>{{ page.price }}</h4>
+            <h4 style="font-weight:300">{{ page.price }}</h4>
     
             <div>
-                <h3>Select your car model:</h3>
+                <h4>Select your car model:</h4>
                 <div class="row">
                     <div class="col-xl-6 col-lg-12" style="max-width:350px;">
                         <select aria-label="Select your car model" class="form-select mb-4 mt-2 car-select">
                         </select>
                     </div>
                     <div class="col-xl-6 col-lg-12 buyButtonDiv" style="text-align: left;">
-                        <button class="btn btn-tertiary buy-btn" style="margin-bottom: 30px;">Buy Now</button>
+                        <button class="btn btn-tertiary buy-btn" style="margin-bottom: 30px;">Buy</button>
                     </div>
                 </div>
             </div>
@@ -63,8 +63,7 @@ stylesheet: products
             <h4>
                 Installation:
             </h4>
-            <br>
-            <h4>
+            <h4 style="font-size:1rem; font-weight:300">
                 Perform 15 minutes self-installation following our video guide: 
             </h4>
             <br>
@@ -78,17 +77,17 @@ stylesheet: products
         <div id="product-div-pc">
             <h1>{{ page.product_name }}</h1>
             <br>
-            <h4>{{ page.price }}</h4>
+            <h4 style="font-weight:300">{{ page.price }}</h4>
     
             <div>
-                <h3>Select your car model:</h3>
+                <h4>Select your car model:</h4>
                 <div class="row">
                     <div class="col-xl-6 col-lg-12" style="max-width:350px;">
                         <select aria-label="Select your car model" class="form-select mb-4 mt-2 car-select">
                         </select>
                     </div>
                     <div class="col-xl-6 col-lg-12 buyButtonDiv" style="text-align: left;">
-                        <button class="btn btn-tertiary buy-btn">Buy Now</button>
+                        <button class="btn btn-tertiary buy-btn">Buy</button>
                     </div>
                 </div>
             </div>
@@ -98,7 +97,7 @@ stylesheet: products
         <p>{{ page.comments }}</p>
         <div>
             <br><br>
-            <h4>What's in the Box?</h4>
+            <h4>What's in the box?</h4>
             <div class="container">
             <div class="row" id="includes"></div>
             </div>
@@ -108,8 +107,7 @@ stylesheet: products
             <h4>
                 Installation:
             </h4>
-            <br>
-            <h4>
+            <h4 style="font-size:1rem; font-weight:300">
                 Perform 15 minutes self-installation following our video guide: 
             </h4>
             <br>
@@ -125,7 +123,6 @@ stylesheet: products
     const carSelectList = document.getElementsByClassName("car-select");
     const buyButton = document.getElementsByClassName("buy-btn");
     
-    console.log(carSelectList[1])
     async function load() {
         const selectedCar = new URLSearchParams(window.location.search).get("car");
         const remote = "https://raw.githubusercontent.com/kommuai/bukapilot/snapshot/selfdrive/car/supported_vehicle.json";
@@ -162,22 +159,18 @@ stylesheet: products
     window.onload = load;
 
     buyButton[0].onclick = () => {
-        // const params = new URLSearchParams();
-        // params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
-
-        // const url = "https://wa.me/60149676780?" + params.toString();
-
-        const url = "{{page.purchase_link}}";
+        const params = new URLSearchParams();
+        params.append("car", carSelectList.value);
+        params.append("price", "{{ page.product_id }}");
+        const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
     };
 
     buyButton[1].onclick = () => {
-        // const params = new URLSearchParams();
-        // params.append("text", `Hey, I am interested in the {{ page.title }} for ${carSelectList.value}`);
-
-        // const url = "https://wa.me/60149676780?" + params.toString();
-
-        const url = "{{page.purchase_link}}";
+        const params = new URLSearchParams();
+        params.append("car", carSelectList.value);
+        params.append("price", "{{ page.product_id }}");
+        const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
     };
 
@@ -195,7 +188,6 @@ stylesheet: products
         col1.classList.add("col-md-6");
         col1.classList.add("col-sm-12");
 
-        console.log(include)
         if  (includes.indexOf(include) <= 3 ) {
             const feature1 = document.createElement("div");
             const bullets1 = document.createElement("ul");
@@ -216,7 +208,7 @@ stylesheet: products
         
         col2.classList.add("col-sm-6");
         col2.classList.add("col-xs-12");
-        if  (includes.indexOf(include) >= 3 ) {
+        if  (includes.indexOf(include) > 3 ) {
             const feature2 = document.createElement("div");
             const bullets2 = document.createElement("ul");
             feature2.classList.add("row")
