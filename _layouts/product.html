@@ -160,7 +160,7 @@ stylesheet: products
 
     buyButton[0].onclick = () => {
         const params = new URLSearchParams();
-        params.append("car", carSelectList.value);
+        params.append("car", carSelectList[0].value);
         params.append("price", "{{ page.product_id }}");
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
@@ -168,7 +168,7 @@ stylesheet: products
 
     buyButton[1].onclick = () => {
         const params = new URLSearchParams();
-        params.append("car", carSelectList.value);
+        params.append("car", carSelectList[1].value);
         params.append("price", "{{ page.product_id }}");
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
