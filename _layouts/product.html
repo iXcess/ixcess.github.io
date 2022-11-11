@@ -162,6 +162,7 @@ stylesheet: products
         const params = new URLSearchParams();
         params.append("car", carSelectList[0].value);
         params.append("price", "{{ page.product_id }}");
+        params.append("referral_id", Rewardful.referral);
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
     };
@@ -170,6 +171,7 @@ stylesheet: products
         const params = new URLSearchParams();
         params.append("car", carSelectList[1].value);
         params.append("price", "{{ page.product_id }}");
+        params.append("referral_id", Rewardful.referral);
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
     };
