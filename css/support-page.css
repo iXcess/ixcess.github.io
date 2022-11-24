@@ -1,6 +1,6 @@
 .table{
     table-layout: fixed;
-    width: 950px;
+    width: 1050px;
     border: 1px solid black;
     vertical-align: middle;
 
@@ -26,17 +26,17 @@ th {
 }
 
 #header-table-1 :nth-child(1){
-    width: 125px;
+    width: 100px;
 }
 #header-table-1 :nth-child(2){
-    width: 125px;
+    width: 100px;
 }
 #header-table-1 :nth-child(3){
-    width: 125px;
+    width: 100px;
 }
 
 #header-table-1 :nth-child(4){
-    width: 125px;
+    width: 100px;
 }
 
 #header-table-1 :nth-child(5){
@@ -44,7 +44,7 @@ th {
 }
 
 #header-table-1 :nth-child(6){
-    width: 100px;
+    width: 175px;
 }
 
 #header-table-2 :nth-child(1){

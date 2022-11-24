@@ -19,8 +19,9 @@ title: Supported Vehicle
             td(tr, vehicle.model);
             td(tr, vehicle.year);
             td(tr, vehicle.variant);
-            td(tr, vehicle.acc_low_speed ? "✔" : "✘");
+            td(tr, vehicle.acc_speed_range);
             td(tr, vehicle.acc_stop_and_go ? "✔" : "✘");
+            td(tr, vehicle.lkc_speed_range);
             td(tr, vehicle.lkc_torque);
             standard.appendChild(tr);
         });
@@ -59,11 +60,12 @@ title: Supported Vehicle
                     <th scope="col" rowspan="2">Year</th>
                     <th scope="col" rowspan="2">Variant</th>
                     <th colspan="2">ACC</th>
-                    <th scope="col">LKC</th>
+                    <th colspan="2">LKC</th>
                 </tr>
                 <tr >
-                    <th scope="col">Low Speed Follow</th>
+                    <th scope="col">Speed Range (km/h)</th>
                     <th scope="col">Stop & Go</th>
+                    <th scope="col">Speed Range (km/h)</th>
                     <th scope="col">Steering Torque</th>
                 </tr>
 
