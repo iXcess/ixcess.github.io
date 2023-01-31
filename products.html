@@ -57,11 +57,7 @@ stylesheet: products
                 resp.standard.map(vehicle => ({
                         label: `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`,
                         key: "standard"
-                    })),
-                resp.semi_acc.map(vehicle => ({
-                        label: `${vehicle.brand} ${vehicle.model} ${vehicle.year} ${vehicle.variant}`,
-                        key: "semi_acc"
-                    })),
+                    }))
                 )
             .sort((a, b) => { return b.label < a.label })
             .forEach((item) => {
