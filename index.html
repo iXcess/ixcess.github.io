@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="tilda-blocks-page41218478.minc2c1.css?t=1707672775" type="text/css" media="all" onerror="this.loaderr='y';" />
     <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-animation-2.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
     <link rel="stylesheet" href="https://static.tildacdn.com/css/highlight.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-forms-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
+    <!--link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-forms-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" /-->
+    <link rel="stylesheet" href="tildaform.csssss" type="text/css" media="all" onerror="this.loaderr='y';" />
     <script nomodule src="https://static.tildacdn.com/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       function t_onReady(func) {
@@ -5273,12 +5274,12 @@
               submit_button = document.querySelector('.t-submit');
               // Text inputs
               var text1 = document.querySelector('#nm-1699988581899').value;
-              var text2 = document.querySelector('#in-1699988581900').value;
-              var text3 = document.querySelector('[aria-label="oneline"]').value;
+              //var text2 = document.querySelector('#in-1699988581900').value;
+              //var text3 = document.querySelector('[aria-label="oneline"]').value;
 
               // Radio buttons
-              var rad1 = document.querySelector('[name="Присутствие"]:checked').value;
-              var rad2 = document.querySelector('[name="Трансфер"]:checked').value;
+              //var rad1 = document.querySelector('[name="Присутствие"]:checked').value;
+              //var rad2 = document.querySelector('[name="Трансфер"]:checked').value;
               var rad3 = document.querySelector('[name="Еда"]:checked').value;
 
               // Checkboxes
@@ -5291,10 +5292,10 @@
               submit_button.addEventListener('click', function(event) {
                   var data = {
                       name: text1,
-                      has_baby: text2,
-                      allergy: text3,
-                      attendance: rad1,
-                      transfer: rad2,
+                      //has_baby: text2,
+                      //allergy: text3,
+                      //attendance: rad1,
+                      //transfer: rad2,
                       food_preference: rad3,
                       alcohol_preference: chkbox_values
                   };
