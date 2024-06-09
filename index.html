@@ -5249,14 +5249,17 @@
               //var rad2 = document.querySelector('[name="Трансфер"]:checked').value;
               var rad3 = document.querySelector('[name="Еда"]:checked').value;
 
-              // Checkboxes
+              submit_button.addEventListener('click', function(event) {
+
+                // Checkboxes
               var chkbox_values = [];
               var chkbox = document.querySelectorAll('[type="checkbox"]:checked');
               for (let i = 0; i < chkbox.length; i++) {
                   chkbox_values.push(chkbox[i].value);
               }
 
-              submit_button.addEventListener('click', function(event) {
+              console.log(chkbox_values);
+
                   if (!submit_pressed) {
 	            submit_pressed = true;
 			  fetch('https://api.telegram.org/bot7117901544:AAFE-1znQgoVkhIy6UM4EAMOg47ni_nxqSw/sendMessage?', {
